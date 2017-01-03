@@ -539,7 +539,9 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
             $token = array(1, $token);
         }
         if (is_int($token)) {
-            $token = array($token);
+            $tmpToken = $token;
+            $token = array();
+            $token[] = $tmpToken;
         }
         if ($token === false) {
             $token = array(1);
